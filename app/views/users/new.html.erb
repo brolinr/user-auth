@@ -1,0 +1,40 @@
+<div class="container col-xl-10 col-xxl-8">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 mb-3">Vertically centered hero sign-up form</h1>
+            <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+        </div>
+
+        <div class="col-md-10 mx-auto col-lg-5">
+          <%= render 'shared/error_messages' %>
+            <%= form_with model: @user, local: true do |f| %>
+                <div class="p-4 p-md-5 border rounded-3 bg-light">
+            
+                    <div class="form-floating mb-3">
+                        <%= f.text_field :name, class: 'form-control', id: "floatingInput" %>
+                        <label for="floatingInput">Name</label>
+                    </div>
+            
+                    <div class="form-floating mb-3">
+                        <%= f.email_field :email, class: 'form-control', id: "floatingInput" %>
+                        <label for="floatingInput">Email address</label>
+                    </div>
+            
+                    <div class="form-floating mb-3">
+                        <%= f.password_field :password, class: 'form-control', id: "floatingInput" %>
+                        <label for="floatingPassword">Password</label>
+                    </div>
+            
+                    <div class="form-floating mb-3">
+                        <%= f.password_field :password_confirmation, class: 'form-control', id: "floatingInput" %>
+                        <label for="floatingPassword">Password confirmation</label>
+                    </div>
+            
+                    <%= f.submit "Sign up", class: "w-100 btn btn-lg btn btn-primary" %>
+                    <hr class="my-4">
+                    <small class="text-muted">Already have an account? <%= link_to "Log in now!", '#' %></small>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
